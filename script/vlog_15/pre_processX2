@@ -1,0 +1,7 @@
+#!/bin/bash
+tt_train='vlog_15/data_divide'
+scale=2
+cd ..
+cd ..
+python trainer.py --dataset 'vsd4k' --eval_datasets 'vsd4k' --model wdsr \
+--scale $scale --job_dir 'checkpoint/' --ckpt './checkpoint_pretrained/epoch_30_X2.pth' --save_label --tt $tt_train --chunk '0' --eval_only

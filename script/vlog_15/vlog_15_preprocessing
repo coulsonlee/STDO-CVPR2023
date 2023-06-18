@@ -1,0 +1,15 @@
+#!/bin/bash
+model='wdsr'
+size_w=20
+size_h=10
+scale=2
+type=2
+# number of clusters
+k=2
+# video length
+time=15
+ttvsd4k='vlog_15'
+tt='vlog_15'
+cd ..
+cd ..
+python3 VSD4K.py --size_w $size_w --size_h $size_h --k $k --type $type --tt $ttvsd4k --time $time --pre_pro

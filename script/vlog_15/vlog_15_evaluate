@@ -1,0 +1,24 @@
+#!/bin/bash
+# X4 w10,h5 X3  X2 w20,h10
+model='wdsr'
+size_w=20
+size_h=10
+type=2
+scale=2
+time=15
+ttvsd4k='vlog_15'
+tttrain='vlog_15/data_divide'
+tt='vlog_15'
+ckpt0='./model_para/wdsr_vlog_15_epoch_50X2_chunk0.pth'
+ckpt1='./model_para/wdsr_vlog_15_epoch_47X2_chunk1.pth'
+k=2
+cd ..
+cd ..
+##### eval
+python3 trainer.py --dataset 'vsd4k' --eval_datasets 'vsd4k' --model $model --scale $scale --job_dir 'model_para/' --chunk 'chunk0' --tt $tt \
+  --ckpt $ckpt0 --eval_only --save_img
+
+python3 trainer.py --dataset 'vsd4k' --eval_datasets 'vsd4k' --model $model --scale $scale --job_dir 'model_para/' --chunk 'chunk1' --tt $tt \
+  --ckpt $ckpt1 --eval_only --save_img
+
+python VSD4K.py --size_w $size_w --size_h $size_h  --type $type --tt $ttvsd4k --time $time --model $model --k $k

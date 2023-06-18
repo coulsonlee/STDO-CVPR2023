@@ -1,0 +1,21 @@
+#!/bin/bash
+# X4 w10,h5 X3  X2 w20,h10
+#--ckpt ./checkpoint_pre/epoch_30_X4.pth be careful when load checkpoint
+source_path='/path/to your/data'
+model='wdsr'
+size_w=20
+size_h=10
+type=2
+scale=2
+time=15
+ttvsd4k='vlog_15'
+tt='vlog_15'
+k=2
+cd ..
+cd ..
+for chunk in {chunk0,chunk1}
+do
+  python3 trainer.py --source_path $source_path --dataset 'vsd4k' --eval_datasets 'vsd4k' --model $model --scale $scale --job_dir 'model_para/' --chunk $chunk --tt $tt \
+  --save_img
+done
+python VSD4K.py --size_w $size_w --size_h $size_h  --type $scale --tt $ttvsd4k --time $time --model $model --k $k
