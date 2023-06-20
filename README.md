@@ -100,11 +100,13 @@ More training epochs and better learning rate schedual may yield better results.
 # Citation
 if you find this repo is helpful, please cite
 ```
-@article{li2023towards,
-  title={Towards High-Quality and Efficient Video Super-Resolution via Spatial-Temporal Data Overfitting},
-  author={Li, Gen and Ji, Jie and Qin, Minghai and Niu, Wei and Ren, Bin and Afghah, Fatemeh and Guo, Linke and Ma, Xiaolong},
-  journal={arXiv preprint arXiv:2303.08331},
-  year={2023}
+@InProceedings{Li_2023_CVPR,
+    author    = {Li, Gen and Ji, Jie and Qin, Minghai and Niu, Wei and Ren, Bin and Afghah, Fatemeh and Guo, Linke and Ma, Xiaolong},
+    title     = {Towards High-Quality and Efficient Video Super-Resolution via Spatial-Temporal Data Overfitting},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {10259-10269}
 }
 
 ```
